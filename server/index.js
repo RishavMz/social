@@ -30,8 +30,8 @@ db.on("error", (error) => console.log(error));
 //****************************************************/
 
 const initialize = require("./helpers/init");
-setTimeout(async()=>{
-    await initialize();
+setTimeout(async () => {
+  await initialize();
 }, 1000);
 
 //****************************************************/
@@ -42,8 +42,11 @@ app.get("/", (req, res) => {
 
 //****************************************************/
 
-const scrollRouter = require("./helpers/scroll");
+const scrollRouter = require("./routes/scroll");
 app.use("/scroll", scrollRouter);
+
+const imageRouter = require("./routes/image");
+app.use("/image", imageRouter);
 
 //****************************************************/
 
