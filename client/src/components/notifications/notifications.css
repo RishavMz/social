@@ -1,0 +1,8 @@
+.notification{
+    display: inline-block;
+    background-color: white;
+    height: 90vh;
+    width: 24vw;
+    margin-left: 1vh;
+    border-radius: 10px;
+}

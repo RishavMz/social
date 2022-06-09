@@ -1,14 +1,22 @@
 .feed{
-    width: 50vw;
-    border: 1px solid black;
+    display: inline-block;
+    width: 48vw;
+    overflow-y: scroll;
+    height: 90vh;
 }
 .feedcard {
     padding: 25px;
-    border: 1px solid grey;
+    background-color: white;
     border-radius: 20px;
     width: 200px;
     display: inline-block;
     margin: 25px;
+}
+.feedcardlike {
+    background-color: rgb(200, 255, 200);
+}
+.feedcardsuperlike {
+    background-color: rgb(246, 223, 227);
 }
 .feedcard:hover {
     box-shadow: 2px 2px 0px black;
@@ -48,4 +56,7 @@
     height: 150px;
     width: 150px;
     border-radius: 50px;
+}
+.feedpic:hover {
+    border-radius: 10px;
 }

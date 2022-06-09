@@ -1,0 +1,8 @@
+.edit{
+    display: inline-block;
+    height: 90vh;
+    width: 24vw;
+    margin-right: 1vh;
+    background-color: white;
+    border-radius: 10px;
+}

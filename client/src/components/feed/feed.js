@@ -28,9 +28,9 @@ function Feed() {
               <div className="lastname">{e.lastname}</div>
             </div>
             <div className="buttons">
-              <button className="btn like">Like</button>
-              <button className="btn superlike">superlike</button>
-              <button className="btn block">block</button>
+              <button className="btn like">+</button>
+              <button className="btn superlike">UwU</button>
+              <button className="btn block">X</button>
             </div>
           </div>
         );

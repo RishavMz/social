@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { userMiniSchema } = require('./miniuser')
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -17,6 +18,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  image: {
+    type: String,
+    require: true,
+  },
   likes: {
     type: [userMiniSchema],
   },
@@ -32,6 +37,10 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
     require: true,
+  },
+  dummy: {
+    type: Boolean,
+    default: false,
   },
 });
 
