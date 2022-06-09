@@ -1,0 +1,62 @@
+[
+  {
+    "firstname": "Wade",
+    "lastname": "Wilston",
+    "image": "faker1.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Steve",
+    "lastname": "Rogers",
+    "image": "faker2.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Tony",
+    "lastname": "Stark",
+    "image": "faker3.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Thor",
+    "lastname": "Odinson",
+    "image": "faker4.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Peter",
+    "lastname": "Parker",
+    "image": "faker5.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Bruce",
+    "lastname": "Banner",
+    "image": "faker6.png",
+    "gender": "M"
+  },
+  {
+    "firstname": "Carol",
+    "lastname": "Danvers",
+    "image": "faker7.png",
+    "gender": "F"
+  },
+  {
+    "firstname": "Natasha",
+    "lastname": "Romanova",
+    "image": "faker8.png",
+    "gender": "F"
+  },
+  {
+    "firstname": "Wanda",
+    "lastname": "Maximoff",
+    "image": "faker9.png",
+    "gender": "F"
+  },
+  {
+    "firstname": "Mary",
+    "lastname": "Jane",
+    "image": "faker10.png",
+    "gender": "F"
+  }
+]
