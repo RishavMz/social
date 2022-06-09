@@ -1,0 +1,51 @@
+.feed{
+    width: 50vw;
+    border: 1px solid black;
+}
+.feedcard {
+    padding: 25px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    width: 200px;
+    display: inline-block;
+    margin: 25px;
+}
+.feedcard:hover {
+    box-shadow: 2px 2px 0px black;
+}
+.firstname {
+    display: inline-block;
+    margin: 10px;
+}
+.lastname {
+    display: inline-block;
+    margin: 10px;
+}
+.name {
+    display: block;
+}
+.btn
+{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 2px;
+    border: none;
+    outline: none;
+}
+.like {
+    background-color: green;
+    color: white;
+}
+.superlike {
+    background-color: red;
+    color: white;
+}
+.block {
+    background-color: black;
+    color: white;
+}
+.feedpic {
+    height: 150px;
+    width: 150px;
+    border-radius: 50px;
+}
