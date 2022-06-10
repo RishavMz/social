@@ -1,35 +1,34 @@
 const fake = require("../models/faker.json");
-const MiniUser = require("../models/miniuser");
-const User = require('../models/user');
+const { MiniUser } = require("../models/miniuser");
+const { User } = require('../models/user');
 
 async function fillFakeData() {
   try {
     await fake.forEach(async (element) => {
-      const fakedata = new MiniUser({
-        firstname:"",
-        lastname:"",
-        image:"",
-        gender:""
-      });
-      const dummyUser = new User({
-        firstname: element.firstname,
-        lastname: element.lastname,
-        image: element.image,
-        likes: [fakedata],
-        superlikes:[fakedata],
-        superlikeby: [fakedata],
-        blocked: [fakedata],
-        gender: element.gender,
-        dummy: true
-      })
-      await dummyUser.save();
       const newUser = new MiniUser({
         firstname: element.firstname,
         lastname: element.lastname,
         image: element.image,
         gender: element.gender,
       });
-      await newUser.save();
+      await newUser.save().then(async()=>{
+        const dummyUser = new User({
+          email: element.firstname+'@'+element.lastname+'.com',
+          firstname: element.firstname,
+          lastname: element.lastname,
+          password: element.firstname+element.lastname,
+          image: element.image,
+          likes: [newUser],
+          superlikes:[newUser],
+          superlikeby: [newUser],
+          blocked: [newUser],
+          gender: element.gender,
+          dummy: true
+        })
+        await dummyUser.save();
+      })
+      
+
     });
   } catch (err) {
     console.log(err);
