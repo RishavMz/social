@@ -67,12 +67,12 @@ router.post("/login", async (req, res) => {
               
             }
             else {
-                res.status(404);
+                res.status(403);
                 res.send("Incorrect password");
             }
           });
       } else {
-        res.status(404);
+        res.status(403);
         res.send("User not found");
       }
     });
