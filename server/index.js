@@ -42,11 +42,14 @@ app.get("/", (req, res) => {
 
 //****************************************************/
 
-const scrollRouter = require("./routes/scroll");
-app.use("/scroll", scrollRouter);
+const feedRouter = require("./routes/feed");
+app.use("/feed", feedRouter);
 
 const imageRouter = require("./routes/image");
 app.use("/image", imageRouter);
+
+const authRouter = require("./routes/auth");
+app.use("/auth", authRouter);
 
 //****************************************************/
 

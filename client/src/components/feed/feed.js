@@ -8,7 +8,7 @@ function Feed() {
   const [feed, updateFeed] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/scroll/all")
+      .get("http://127.0.0.1:8000/feed/all")
       .then((res) => {
         updateFeed(res.data);
       })
@@ -21,7 +21,7 @@ function Feed() {
     <div className="feed">
       {feed.map((e) => {
         return (
-          <div id={e._id} className="feedcard">
+          <div key={e._id} className="feedcard">
             <img src = {IMAGEPATH+e.image} className="feedpic" alt={IMAGEPATH+e.image}></img>
             <div className="name">
               <div className="firstname">{e.firstname}</div> 
