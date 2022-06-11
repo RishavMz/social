@@ -9,6 +9,7 @@ function Edit(props) {
     lastname: "",
   });
   const { firstname, lastname } = data;
+  const [imagereload, reloader] = useState();
 
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: [e.target.value] });
@@ -16,24 +17,25 @@ function Edit(props) {
   const editsave = (e) => {
     e.preventDefault();
   };
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(null);
+  const [flink, flinker] = useState("")
     function handleFileChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
+        setFile(e.target.files[0]);
+        reloader(URL.createObjectURL(e.target.files[0]))
+        console.log("Files   =>  "+e.target.files[0])
     }
   const handleFileUpload = async(e) => {
     e.preventDefault();
     var formdata = new FormData();
     formdata.append("file", file);
     formdata.append("name", firstname+lastname);
-    console.log(formdata, file)
     axios
       .post(`${env.BACKEND}/edit/image`, formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }})
       .then((res) => {
-        console.log(formdata)
+        console.log(res)
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +43,7 @@ function Edit(props) {
 
   }
   useEffect(() => {
-    console.log(props.data.userdata.userdata[0]);
+    reloader(env.IMAGEPATH+props.data.userdata.userdata[0].image)
     setData({
       ...data,
       firstname: props.data.userdata.userdata[0].firstname,
@@ -54,8 +56,8 @@ function Edit(props) {
       <center>
         <img
           className="editimage"
-          src={env.IMAGEPATH + props.data.userdata.userdata[0].image}
-          alt={env.IMAGEPATH + props.data.userdata.userdata[0].image}
+          src={imagereload}
+          alt={imagereload}
         />
         <div className="editform">
           <center>

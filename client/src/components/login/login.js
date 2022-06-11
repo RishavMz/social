@@ -57,7 +57,6 @@ function Login({ logindata }) {
           })
           .then(async (res) => {
             await logindata(res.data);
-            localStorage.setItem("logintoken", res.data.token);
           });
       } catch (err) {
         console.log(err);

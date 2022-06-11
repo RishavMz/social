@@ -1,34 +1,40 @@
-const express = require('express');
-const multer = require('multer')
+const express = require("express");
+const multer = require("multer");
 const router = express.Router();
-var http = require('http')
-var path = require('path')
-var fs = require('fs')
+const fs = require('fs');
+
 
 const imageStorage = multer.diskStorage({
-  destination: 'images', 
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '_' + Date.now() 
-           + path.extname(file.originalname))
-  }
+  destination: './images',
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+}
 });
 const imageUpload = multer({
   storage: imageStorage,
-  limits: {
-    fileSize: 1000000 // 1000000 Bytes = 1 MB
-  },
   fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(png)$/)) { 
-       return cb(new Error('Please upload a png Image'))
-     }
-   cb(undefined, true)
-}
-}) 
-router.post('/image', imageUpload.single('image'), (req, res) => {
-  console.log("Image uploaded")
-  res.send(req.file)
-}, (error, req, res, next) => {
-  res.status(400).send({ error: error.message })
-})
+    if (!file.originalname.match(/\.(png|jpg|jpeg)$/)) {
+      return cb(new Error("Please upload a png or jpg Image"));
+    }
+    cb(undefined, true);
+  },
+});
+router.post(
+  "/image",
+  imageUpload.single('file'),
+  (req, res) => {
+    console.log("Image uploaded");
+    fs.rename(`images/${req.file.originalname}`, `images/${req.body.name}.png`, function(err) {
+      if ( err ) console.log('ERROR: ' + err);
+  });
+    console.log(req.body.file, req.body.name)
+    console.log(req.file)
+    res.send(req.body.file);
+  },
+  (error, req, res, next) => {
+    console.log(error.message)
+    res.status(400).send({ error: error.message });
+  }
+);
 
 module.exports = router;

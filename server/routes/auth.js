@@ -11,7 +11,7 @@ router.post("/signup", async (req, res) => {
     const newUser = new MiniUser({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      image: req.body.image,
+      image: req.body.firstname+req.body.lastname+'.png',
       gender: req.body.gender,
     });
     await newUser.save().then(async () => {
@@ -21,7 +21,7 @@ router.post("/signup", async (req, res) => {
           firstname: req.body.firstname,
           lastname: req.body.lastname,
           password: hash,
-          image: req.body.image,
+          image: req.body.firstname+req.body.lastname+'.png',
           likes: [newUser],
           superlikes: [newUser],
           superlikeby: [newUser],
