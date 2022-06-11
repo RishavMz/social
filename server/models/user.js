@@ -38,9 +38,8 @@ const userSchema = new mongoose.Schema({
   blocked: {
     type: [userMiniSchema],
   },
-  gender: {
-    type: String,
-    require: true,
+  blockedBy: {
+    type: [userMiniSchema],
   },
   dummy: {
     type: Boolean,

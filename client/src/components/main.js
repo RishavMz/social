@@ -20,8 +20,8 @@ function Main(props) {
         <button className="logout" onClick={logout}>LOG OUT</button>
       </div>
       <Edit data={props}/>
-      <Feed date={props}/>
-      <Notification />
+      <Feed value={props}/>
+      <Notification sup={props} />
     </div>
   );
 }

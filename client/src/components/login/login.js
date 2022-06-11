@@ -41,6 +41,7 @@ function Login({ logindata }) {
         });
     } catch (err) {
       console.log(err);
+      alert("Username or password incorrect")
     }
   };
   const signup = async (e) => {
@@ -56,10 +57,13 @@ function Login({ logindata }) {
             image: "not_uploaded.png"
           })
           .then(async (res) => {
+            alert("Signup successful")
           });
       } catch (err) {
         console.log(err);
       }
+    } else {
+      alert("Passwords do not match")
     }
   };
   return (

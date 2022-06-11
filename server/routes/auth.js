@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
                     lastname: req.body.lastname
                 }
                 await jwt.sign({UserData}, process.env.SECRETKEY, { expiresIn: '86400s' }, async(err, token) => {
-                    data = await User.find({ email: req.body.email });
+                    data = await User.find({ email: req.body.email , dummy: false});
                     const logindata = {
                         userdata: data,
                         token: token

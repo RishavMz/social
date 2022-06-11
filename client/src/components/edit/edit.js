@@ -36,6 +36,7 @@ function Edit(props) {
         }})
       .then((res) => {
         console.log(res)
+        alert("Successfully uploaded")
       })
       .catch((err) => {
         console.log(err);
@@ -57,13 +58,13 @@ function Edit(props) {
         <img
           className="editimage"
           src={imagereload}
-          alt={imagereload}
+          alt="No image"
         />
         <div className="editform">
           <center>
             <form>
             <input type="file" onChange={handleFileChange} />
-                <button onClick={handleFileUpload}>
+                <button className="loginbtn" onClick={handleFileUpload}>
                   Upload!
                 </button>
             </form>

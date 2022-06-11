@@ -9,7 +9,6 @@ async function fillFakeData() {
         firstname: element.firstname,
         lastname: element.lastname,
         image: element.image,
-        gender: element.gender,
       });
       await newUser.save().then(async()=>{
         const dummyUser = new User({
@@ -22,7 +21,7 @@ async function fillFakeData() {
           superlikes:[newUser],
           superlikeby: [newUser],
           blocked: [newUser],
-          gender: element.gender,
+          blockedby: [newUser],
           dummy: true
         })
         await dummyUser.save();
