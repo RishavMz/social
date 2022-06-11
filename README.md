@@ -1,1 +1,1 @@
-Please refer to the README.md files presen in client and server directory for installation and execution
+Please refer to the README.md files present in `/client` and `/server` directory for installation and execution.
