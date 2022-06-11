@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
   likes: {
     type: [userMiniSchema],
   },
+  likecount: {
+    type: Number,
+    default: 0
+  },
   superlikes: {
     type: [userMiniSchema],
   },

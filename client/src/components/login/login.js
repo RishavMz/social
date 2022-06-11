@@ -56,7 +56,6 @@ function Login({ logindata }) {
             image: "not_uploaded.png"
           })
           .then(async (res) => {
-            await logindata(res.data);
           });
       } catch (err) {
         console.log(err);

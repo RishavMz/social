@@ -60,3 +60,13 @@
 .feedpic:hover {
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 700px) {
+    .feed{
+        display: block;
+        width: 99vw;
+        overflow-y: scroll;
+        height: 33vh;
+        position: absolute;
+    }
+  }
