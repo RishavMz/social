@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./feed.css";
+import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js"
 
 import env from "./../../env";
 
+const socket = io(`http://127.0.0.1:5000`);
+socket.on("new_msg", function(data) {
+  console.log("msg")
+  alert(data.msg);
+})
 function Feed(props) {
   const [feed, updateFeed] = useState([]);
   useEffect(() => {
+    socket.emit('join', {image: props.value.userdata.userdata[0].image});
     const logintoken = localStorage.getItem('logintoken');
     axios
       .post(`${env.BACKEND}/feed/all`, {data: props.value.userdata.userdata[0] },{
@@ -22,6 +29,7 @@ function Feed(props) {
       });
   }, []);
 
+  
   return (
     <div className="feed">
       {feed.map((e) => {
