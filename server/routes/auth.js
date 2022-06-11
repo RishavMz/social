@@ -2,7 +2,7 @@ const express = require("express");
 const { MiniUser } = require("../models/miniuser");
 const { User } = require("../models/user");
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.post("/signup", async (req, res) => {
     const newUser = new MiniUser({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      image: req.body.firstname+req.body.lastname+'.png',
+      image: req.body.firstname + req.body.lastname + ".png",
       gender: req.body.gender,
     });
     await newUser.save().then(async () => {
@@ -21,7 +21,7 @@ router.post("/signup", async (req, res) => {
           firstname: req.body.firstname,
           lastname: req.body.lastname,
           password: hash,
-          image: req.body.firstname+req.body.lastname+'.png',
+          image: req.body.firstname + req.body.lastname + ".png",
           likes: [newUser],
           superlikes: [newUser],
           superlikeby: [newUser],
@@ -50,25 +50,31 @@ router.post("/login", async (req, res) => {
           .compare(req.body.password, response.password)
           .then(async (result) => {
             if (result === true) {
-                const UserData = {
+              const UserData = {
+                email: req.body.email,
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
+              };
+              await jwt.sign(
+                { UserData },
+                process.env.SECRETKEY,
+                { expiresIn: "86400s" },
+                async (err, token) => {
+                  data = await User.find({
                     email: req.body.email,
-                    firstname: req.body.firstname,
-                    lastname: req.body.lastname
-                }
-                await jwt.sign({UserData}, process.env.SECRETKEY, { expiresIn: '86400s' }, async(err, token) => {
-                    data = await User.find({ email: req.body.email , dummy: false});
-                    const logindata = {
-                        userdata: data,
-                        token: token
-                    }
-                    res.status(200);
-                    res.send(logindata);
+                    dummy: false,
                   });
-              
-            }
-            else {
-                res.status(403);
-                res.send("Incorrect password");
+                  const logindata = {
+                    userdata: data,
+                    token: token,
+                  };
+                  res.status(200);
+                  res.send(logindata);
+                }
+              );
+            } else {
+              res.status(403);
+              res.send("Incorrect password");
             }
           });
       } else {

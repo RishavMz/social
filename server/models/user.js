@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { userMiniSchema } = require('./miniuser')
+const { userMiniSchema } = require("./miniuser");
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
   },
   likecount: {
     type: Number,
-    default: 0
+    default: 0,
   },
   superlikes: {
     type: [userMiniSchema],
@@ -48,5 +48,5 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports = {
-  User:new mongoose.model("User", userSchema)
-}
+  User: new mongoose.model("User", userSchema),
+};

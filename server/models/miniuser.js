@@ -17,5 +17,5 @@ const userMiniSchema = new mongoose.Schema({
 
 module.exports = {
   MiniUser: new mongoose.model("MiniUser", userMiniSchema),
-  userMiniSchema : userMiniSchema
+  userMiniSchema: userMiniSchema,
 };

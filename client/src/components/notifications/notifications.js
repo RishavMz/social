@@ -4,14 +4,21 @@ import "./notifications.css";
 
 import env from "./../../env";
 
-
 function Notification(props) {
   useEffect(() => {}, []);
 
   return (
-    <div className="notification"> 
-    <br/><br/><center><b>Likes : {props.sup.userdata.userdata[0].likecount}</b></center>
-    <br/><br/><center><b>Super Likers</b></center>
+    <div className="notification">
+      <br />
+      <br />
+      <center>
+        <b>Likes : {props.sup.userdata.userdata[0].likecount}</b>
+      </center>
+      <br />
+      <br />
+      <center>
+        <b>Super Likers</b>
+      </center>
       {props.sup.userdata.userdata[0].superlikeby.map((e) => {
         return (
           <div key={e._id} className="superlikecard">

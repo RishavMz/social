@@ -1,73 +1,72 @@
-.feed{
-    display: inline-block;
-    width: 48vw;
-    overflow-y: scroll;
-    height: 90vh;
+.feed {
+  display: inline-block;
+  width: 48vw;
+  overflow-y: scroll;
+  height: 90vh;
 }
 .feedcard {
-    padding: 25px;
-    background-color: white;
-    border-radius: 20px;
-    width: 200px;
-    display: inline-block;
-    margin: 25px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 20px;
+  width: 200px;
+  display: inline-block;
+  margin: 25px;
 }
 .feedcardlike {
-    background-color: rgb(200, 255, 200);
+  background-color: rgb(200, 255, 200);
 }
 .feedcardsuperlike {
-    background-color: rgb(246, 223, 227);
+  background-color: rgb(246, 223, 227);
 }
 .feedcard:hover {
-    box-shadow: 2px 2px 0px black;
+  box-shadow: 2px 2px 0px black;
 }
 .firstname {
-    display: inline-block;
-    margin: 10px;
+  display: inline-block;
+  margin: 10px;
 }
 .lastname {
-    display: inline-block;
-    margin: 10px;
+  display: inline-block;
+  margin: 10px;
 }
 .name {
-    display: block;
+  display: block;
 }
-.btn
-{
-    height: 25px;
-    width:  25px;
-    border-radius: 25px;
-    margin: 2px;
-    border: none;
-    outline: none;
+.btn {
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  margin: 2px;
+  border: none;
+  outline: none;
 }
 .like {
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
 .superlike {
-    background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 .block {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 .feedpic {
-    height: 150px;
-    width: 150px;
-    border-radius: 50px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50px;
 }
 .feedpic:hover {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 700px) {
-    .feed{
-        display: block;
-        width: 99vw;
-        overflow-y: scroll;
-        height: 33vh;
-        position: absolute;
-    }
+  .feed {
+    display: block;
+    width: 99vw;
+    overflow-y: scroll;
+    height: 33vh;
+    position: absolute;
   }
+}

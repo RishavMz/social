@@ -1,38 +1,38 @@
-.edit{
-    display: inline-block;
-    height: 90vh;
-    width: 24vw;
-    margin-right: 1vh;
-    background-color: white;
-    border-radius: 10px;
-    position: absolute;
-    left: 2vh;
+.edit {
+  display: inline-block;
+  height: 90vh;
+  width: 24vw;
+  margin-right: 1vh;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 2vh;
 }
 
-.editimage{
-    margin: 50px;
-    height: 200px;
-    width: 200px;
-    border: 1px solid black;
-    padding: 10px;
+.editimage {
+  margin: 50px;
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 1240px) {
-    .editimage{
-        margin: 25px;
-        height: 100px;
-        width: 100px;
-        border: 1px solid black;
-        padding: 10px;
-    }
+  .editimage {
+    margin: 25px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    padding: 10px;
   }
-  @media only screen and (max-width: 700px) {
-    .edit{
-        display: block;
-        width: 95vw;
-        overflow-y: scroll;
-        height: 33vh;
-        position: absolute;
-        top: 40vh;
-    }
+}
+@media only screen and (max-width: 700px) {
+  .edit {
+    display: block;
+    width: 95vw;
+    overflow-y: scroll;
+    height: 33vh;
+    position: absolute;
+    top: 40vh;
   }
+}

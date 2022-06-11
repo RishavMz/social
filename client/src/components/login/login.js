@@ -41,7 +41,7 @@ function Login({ logindata }) {
         });
     } catch (err) {
       console.log(err);
-      alert("Username or password incorrect")
+      alert("Username or password incorrect");
     }
   };
   const signup = async (e) => {
@@ -54,16 +54,16 @@ function Login({ logindata }) {
             lastname: lastname[0],
             email: signupemail[0],
             password: signuppassword[0],
-            image: "not_uploaded.png"
+            image: "not_uploaded.png",
           })
           .then(async (res) => {
-            alert("Signup successful")
+            alert("Signup successful");
           });
       } catch (err) {
         console.log(err);
       }
     } else {
-      alert("Passwords do not match")
+      alert("Passwords do not match");
     }
   };
   return (

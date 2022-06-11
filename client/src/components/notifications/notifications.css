@@ -1,35 +1,35 @@
-.notification{
-    display: inline-block;
-    background-color: white;
-    height: 90vh;
-    width: 24vw;
-    margin-left: 1vh;
-    border-radius: 10px;
-    position: absolute;
-    right: 2vh;
-    overflow-y: scroll;
+.notification {
+  display: inline-block;
+  background-color: white;
+  height: 90vh;
+  width: 24vw;
+  margin-left: 1vh;
+  border-radius: 10px;
+  position: absolute;
+  right: 2vh;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 700px) {
-    .notification{
-        display: block;
-        width: 95vw;
-        overflow-y: scroll;
-        height: 33vh;
-        position: absolute;
-        top: 75vh;
-    }
+  .notification {
+    display: block;
+    width: 95vw;
+    overflow-y: scroll;
+    height: 33vh;
+    position: absolute;
+    top: 75vh;
   }
+}
 
-  .superlikecard {
-    display: inline;
-    height: 50px;
-    width: 50px;
-    padding: 10px;
-  }
-  .superlikepic {
-    height: 100px;
-    width:  100px;
-    margin: 5px;
-    border-radius: 10px;
-  }
+.superlikecard {
+  display: inline;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+}
+.superlikepic {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  border-radius: 10px;
+}
