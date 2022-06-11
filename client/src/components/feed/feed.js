@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./feed.css";
 
-const IMAGEPATH = `http://127.0.0.1:8000/image/`
+import env from "./../../env";
 
 function Feed() {
   const [feed, updateFeed] = useState([]);
   useEffect(() => {
+    const logintoken = localStorage.getItem('logintoken');
     axios
-      .get("http://127.0.0.1:8000/feed/all")
+      .get(`${env.BACKEND}/feed/all`, {
+        headers: {
+          'Authorization': `Bearer ${logintoken}`
+      },
+      })
       .then((res) => {
         updateFeed(res.data);
       })
@@ -22,7 +27,7 @@ function Feed() {
       {feed.map((e) => {
         return (
           <div key={e._id} className="feedcard">
-            <img src = {IMAGEPATH+e.image} className="feedpic" alt={IMAGEPATH+e.image}></img>
+            <img src = {env.IMAGEPATH+e.image} className="feedpic" alt={env.IMAGEPATH+e.image}></img>
             <div className="name">
               <div className="firstname">{e.firstname}</div> 
               <div className="lastname">{e.lastname}</div>

@@ -51,6 +51,9 @@ app.use("/image", imageRouter);
 const authRouter = require("./routes/auth");
 app.use("/auth", authRouter);
 
+const editRouter = require("./routes/profile");
+app.use("/edit", editRouter);
+
 //****************************************************/
 
 app.listen(PORT, () => {

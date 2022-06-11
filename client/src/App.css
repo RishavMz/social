@@ -1,6 +1,25 @@
-.App {
+.Main {
   height: 100vh;
   text-align: center;
   background-color: rgb(243, 238, 219);
 }
 
+.navbar {
+  display: block;
+  background-color: rgb(178, 35, 59);
+  color: white;
+  font-weight: 900;
+  height: 7vh;
+  margin-bottom: 1vh;
+}
+
+.logout {
+  background-color: rgb(178, 35, 59);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 900;
+  margin-top: 5px;
+  position: absolute;
+  right: 100px;
+}

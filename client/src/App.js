@@ -1,17 +1,21 @@
 import "./App.css";
-import "./components/feed/feed";
-import Feed from "./components/feed/feed";
-import Edit from "./components/edit/edit";
-import Notification from "./components/notifications/notifications";
-import Navbar from "./components/navbar/navbar";
+import Main from "./components/main";
+import Login from "./components/login/login";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [token, setToken] = useState("");
+  const logindata = (data) => {
+    setToken(data);
+  };
   return (
     <div className="App">
-      <Navbar/>
-      <Edit />
-      <Feed />
-      <Notification />
+      {console.log("Tokemnn  "+token)}
+      {token == "" ? (
+        <Login logindata={logindata} />
+      ) : (
+        <Main userdata={token} />
+      )}
     </div>
   );
 }
